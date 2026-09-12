@@ -13,15 +13,15 @@ planeta tierra;
 planeta sol;
 int main(){
 	//Las coordenadas de la primera bola (sol)
-	sol.x = 400;
-	sol.y = 400;
+	sol.x = 450;
+	sol.y = 450;
 	
 	//Valores
 	float pi = 3.14;
 	float tiempo = 10;
 	float thetha = 0;
 	
-	InitWindow(800, 800, "Mi primer raylib"); //Los dos primeros son el tamaño, el tercero es el título
+	InitWindow(900, 900, "Mi primer raylib"); //Los dos primeros son el tamaño, el tercero es el título
 	SetTargetFPS(60); //Dar los FPS de la pantalla 
 	
 	/*
@@ -44,16 +44,29 @@ int main(){
 		//1. Event Handing 
 		
 		//2. Updating Position
+		/*
+			Acá se usan dos fórmulas, la del ángulo thetha = thetha w*DeltaT, donde w es el
+			periodo 2pi/T donde T es tiempo en segundos, eso significa que hace un giro
+			cada T segundos. DeltaT es la tasa de cambio del tiempo, que está medida
+			con GetFrameTime que es el tiempo que le tomó cambiar de un frame a otro al 
+			PC.
+			
+			La otra formula es la posicion del planeta en X y Y, cómo es movimiento 
+			Elíptico, se usa x = coordenada_de_centro - raiz(a^2 - b^2) + aCos(thetha)
+			Donde a y b son distancias de la tierra al sol, y usa 
+			y = coordenada_centro + bCos(theta)
+			
+		*/
 		thetha += ((2*pi)/tiempo)*GetFrameTime();
-		tierra.x = sol.x + 200 * sin(thetha) ;
-		tierra.y = sol.y + 200 * cos(thetha);
+		tierra.x = sol.x -(sqrt(pow(300, 2)-pow(299, 2)))+ 300 * cos(thetha) ;
+		tierra.y = sol.y + 99 * sin(thetha);
 		
 		//3. Drawing 
 		BeginDrawing();
 		
 			ClearBackground(BLACK); //Si se mueve el objeto, hace un clear en cada iteracion
-			DrawCircle(tierra.x, tierra.y, 10, BLUE); 
-			DrawCircle(sol.x, sol.y, 40, ORANGE);/*
+			DrawCircle(tierra.x, tierra.y, 5, BLUE); 
+			DrawCircle(sol.x, sol.y, 20, ORANGE);/*
 				Los dos primeros parametros son el punto en la pantalla 
 				donde se dibujan, el tercer parámetro es el radio del circulo
 				y el último es el color
