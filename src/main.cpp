@@ -10,7 +10,7 @@ int main(){
 	//Inicializar los planetas
 	inicializarSistema();
 	
-	InitWindow(1280, 800, "Mi primer raylib"); //Los dos primeros son el tamaño, el tercero es el título
+	InitWindow(1280, 900, "Mi primer raylib"); //Los dos primeros son el tamaño, el tercero es el título
 	SetTargetFPS(60); //Dar los FPS de la pantalla 
 	
 	/*
