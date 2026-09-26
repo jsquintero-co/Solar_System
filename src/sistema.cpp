@@ -51,7 +51,7 @@ void inicializarSistema(){
 	jupiter.diam = 19;
 	jupiter.tiempo = 118.6;
 	jupiter.thetha = 0;
-	jupiter.color = BEIGE;
+	jupiter.color = (Color){ 145, 95, 75, 255 };
 
 //Valores saturno
 	saturno.disA = 200;
@@ -59,7 +59,7 @@ void inicializarSistema(){
 	saturno.diam = 14;
 	saturno.tiempo = 294.6;
 	saturno.thetha = 0; 
-	saturno.color = GRAY;
+	saturno.color = BEIGE;
 
 //Valores urano
 	urano.disA = 300;
