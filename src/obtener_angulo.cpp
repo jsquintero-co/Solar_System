@@ -1,6 +1,8 @@
 #include <math.h>
+#include <iostream>
 #define PI 3.14
 
+//Función para pasar de grados a radianes
 
 double radianes(double a){
 	a *= (PI/180);
@@ -31,8 +33,9 @@ double calcularE(double M, double e){
 	E = M;
 	
 	for(int i = 0; i < 10; i++){
-		E = M + e*sin(E)
+		E = M + e*sin(E);
 	}
 	
 	return E;
 }
+

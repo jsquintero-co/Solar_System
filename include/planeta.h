@@ -15,6 +15,10 @@ struct Planeta{
 	float diam;
 	float thetha;
 	Color color;
+	double a;
+	double e;
+	double L;
+	double w;
 };
 
 
